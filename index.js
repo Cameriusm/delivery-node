@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const PORT = 3001;
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -29,6 +29,13 @@ app.use(function(req, res, next) {
 });
 app.use(cors());
 app.use(express.json());
+
+const parseRouter = require('./routes/parseRouter');
+// const parseController = require('/controllers/parseController.js');
+// const parseRouter = express.Router();
+
+// parseRouter.use('/parse', parseController.parse);
+app.use('/api', parseRouter);
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
