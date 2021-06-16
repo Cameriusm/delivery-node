@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const PORT = 3001;
 
@@ -28,9 +29,10 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const parseRouter = require('./routes/parseRouter');
+// const detailsRouter = require('./routes/detailsRouter');
 // const parseController = require('/controllers/parseController.js');
 // const parseRouter = express.Router();
 

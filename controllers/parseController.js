@@ -11,14 +11,17 @@ const checkHref = (href) => {
 };
 
 exports.parse = async (req, res) => {
+  // TODO
+  // if (url)
   const url = checkHref(req.body.href);
+  // console.log(req);
   console.log(url);
 
   if (url[0]) {
     console.log('done');
     if (url[1] === 'delivery') {
       let response = await axios(url[0]).catch(console.error);
-      console.log(response);
+      // console.log(response);
       let menu = await parseDelivery(response);
 
       res.send(menu);
