@@ -13,6 +13,7 @@ const checkHref = (href) => {
 exports.parse = async (req, res) => {
   // TODO
   // if (url)
+  // console.log(req);
   const url = checkHref(req.body.href);
   // console.log(req);
   console.log(url);
@@ -23,6 +24,7 @@ exports.parse = async (req, res) => {
       let response = await axios(url[0]).catch(console.error);
       // console.log(response);
       let menu = await parseDelivery(response);
+      // console.log(menu);
 
       res.send(menu);
     } else if (url[1] === 'yandex') {

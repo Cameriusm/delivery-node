@@ -1,12 +1,9 @@
 const cheerio = require('cheerio');
 
 module.exports.parseDelivery = async (response) => {
-  console.log('Done parsing');
-
   const html = response.data;
   const $ = cheerio.load(html);
   const links = $('.menu-product');
-  const parsedInfo = [];
   const menu = [];
   const restaurantTitle = $('.vendor-headline__title').text();
 
@@ -30,6 +27,7 @@ module.exports.parseDelivery = async (response) => {
     });
   });
 
+  console.log('Done parsing');
   return { menu: menu, name: restaurantTitle };
 };
 
