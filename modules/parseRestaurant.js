@@ -46,12 +46,7 @@ module.exports.parseYandex = async (response) => {
       .find('.RestaurantPageMenuItem_description')
       .first()
       .text();
-    // const img = $(this)
-    //   .find('.RestaurantPageMenuItem_pictureImage')
-    //   .css('background-image');
-    // .text();
-    // console.log($('RestaurantPageMenuItem_pictureImage').attr('style'));
-    // .text();
+
     const img =
       'https://upload.wikimedia.org/wikipedia/commons/c/ca/%D0%98%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0_%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.%D0%95%D0%B4%D1%8B.png';
 
